@@ -1,7 +1,7 @@
 # tug-gpt
 Setup for running a custom GPT UI on top of my own API Keys
 
-### Setup
+### Uses
 
 - Uses Nginx for Reverse proxy
 - lets Encrypt for SSL cert generation
@@ -34,6 +34,12 @@ After the installation is done, run the below command
 ```bash
 certbot certonly --standalone -d chat.example.com
 ```
+
+#### Auto renew script
+
+- Auto renew script is present at `renew_ssl_and_restart_docker.sh`
+- Configure it with a cron job. I have set it up to run every month - `0 0 1 * * /home/ec2-user/openai/renew_ssl_and_restart_docker.sh
+  `
 
 ### FAQ
 
